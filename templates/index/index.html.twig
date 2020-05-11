@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "test.welcomeincontroller" | trans({'controller_name': controller_name}) }}{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>{{ "test.welcomeincontroller" | trans({'controller_name': controller_name}) }} ✅</h1>
+
+    {{ "test.friendly_message" | trans }}
+    <ul>
+        <li>
+            {% set controller_src_filepath = 'src/Controller/' ~ controller_name ~ '.php' %}
+            {% set controller_src_path = "<code><a href='" ~ controller_src_filepath | file_link(0) ~ "'>#{controller_src_filepath}</a></code>" %}
+            {{ "test.controller_path" | trans({'controller_src_path': controller_src_path}) | raw }}
+        </li>
+
+        <li>
+            {% set template_src_filepath = 'templates/index/index.html.twig' %}
+            {% set template_src_path = "<code><a href='" ~ template_src_filepath | file_link(0) ~ "'>#{template_src_filepath}</a></code>" %}
+            {{ "test.template_path" | trans({'template_src_path': template_src_path}) | raw }}
+        </li>
+    </ul>
+</div>
+{% endblock %}

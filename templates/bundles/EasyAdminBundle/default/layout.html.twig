@@ -1,0 +1,23 @@
+{% extends '@!EasyAdmin/default/layout.html.twig' %}
+
+{% block user_menu %}
+    <div class="popover-content-section user-menu">
+        <ul>
+        {% for locale in admin_supported_locales %}
+            <li><a href="{{ url('admin_set_locale') }}?lang={{ locale }}">{{ locale | locale_name }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    {% if _user_has_logout or _user_is_impersonated %}
+        <div class="popover-content-section user-menu">
+            {% if _user_has_logout %}
+                <a class="user-action user-action-logout" href="{{ _logout_path }}">{{ 'user.signout'|trans(domain = 'EasyAdminBundle') }}</a>
+            {% endif %}
+
+            {% if _user_is_impersonated %}
+                <a class="user-action user-action-exit-impersonation" href="?_switch_user=_exit">{{ 'user.exit_impersonation'|trans(domain = 'EasyAdminBundle') }}</a>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock user_menu %}

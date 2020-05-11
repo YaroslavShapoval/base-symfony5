@@ -1,0 +1,57 @@
+Admin: 'Admin'
+User: 'User'
+Admin Area: 'Admin Area'
+
+Year: 'Year'
+Month: 'Month'
+Day: 'Day'
+Hour: 'Hour'
+Minute: 'Minute'
+
+menu:
+    admins: 'Admins'
+    users: 'Users'
+
+admins:
+    fields:
+        id: 'ID'
+        username: 'Username'
+        password: 'Password'
+        email: 'Email'
+        language: 'Language'
+        is_active: 'Active'
+        created_at: 'Creating date'
+        updated_at: 'Last editing date'
+    list:
+        page_title: 'List of admins'
+    new:
+        page_title: 'Add admin'
+    edit:
+        page_title: 'Edit admin'
+
+users:
+    fields:
+        id: 'ID'
+        email: 'Email'
+        password: 'Password'
+        profile_language: 'Profile Language'
+        is_email_verified: 'Email is verified'
+        is_blocked_by_admin: 'Blocked by admin'
+        is_deleted_by_user: 'Deleted by user'
+        created_at: 'Creating date'
+        updated_at: 'Last editing date'
+    list:
+        page_title: 'List of users'
+    new:
+        page_title: 'Add user'
+    edit:
+        page_title: 'Edit user'
+
+action:
+    search: 'Search'
+    new: 'New'
+    edit: 'Edit'
+    delete: 'Delete'
+    cancel: 'Cancel'
+    save: 'Save'
+    list: 'List'

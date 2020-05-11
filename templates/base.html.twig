@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% trans %}default.title{% endtrans %}{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <ul class="switch-locale">
+            {% for locale in supported_locales %}
+                <li><a href="{{ url('set_locale') }}?lang={{ locale }}">{{ locale | locale_name }}</a></li>
+            {% endfor %}
+        </ul>
+
+        {% if app.user %}
+            <p>{% trans %}test.username{% endtrans %}: {{ app.user.username }}</p>
+            <p><a href="{{ url('app_logout') }}">{% trans %}test.logout{% endtrans %}</a></p>
+        {% else %}
+                <p><a href="{{ url('app_login') }}">{% trans %}test.login{% endtrans %}</a></p>
+        {% endif %}
+
+        <p><a href="{{ url('index') }}">{% trans %}test.index_page{% endtrans %}</a></p>
+        <p><a href="{{ url('language_specific') }}">{% trans %}test.security_page{% endtrans %}</a></p>
+
+        {% if app.debug %}
+            <p>{% trans %}test.request_method{% endtrans %}: {{ app.request.method }}</p>
+            <p>{% trans %}test.app_env{% endtrans %}: {{ app.environment }}</p>
+        {% endif %}
+
+        {% block body %}{% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

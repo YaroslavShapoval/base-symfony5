@@ -1,0 +1,57 @@
+Admin: 'Администратор'
+User: 'Пользователь'
+Admin Area: 'Панель Администратора'
+
+Year: 'Год'
+Month: 'Месяц'
+Day: 'День'
+Hour: 'Час'
+Minute: 'Минута'
+
+menu:
+    admins: 'Администраторы'
+    users: 'Пользователи'
+
+admins:
+    fields:
+        id: 'ID'
+        username: 'Имя пользователя'
+        password: 'Пароль'
+        email: 'Email'
+        language: 'Язык'
+        is_active: 'Активен'
+        created_at: 'Дата добавления'
+        updated_at: 'Дата последнего редактирования'
+    list:
+        page_title: 'Список администраторов'
+    new:
+        page_title: 'Добавить администратора'
+    edit:
+        page_title: 'Редактировать администратора'
+
+users:
+    fields:
+        id: 'ID'
+        email: 'Почта'
+        password: 'Пароль'
+        profile_language: 'Язык профиля'
+        is_email_verified: 'Почта подтверждена'
+        is_blocked_by_admin: 'Заблокирован админом'
+        is_deleted_by_user: 'Удален пользователем'
+        created_at: 'Дата добавления'
+        updated_at: 'Дата последнего редактирования'
+    list:
+        page_title: 'Список пользователей'
+    new:
+        page_title: 'Добавить пользователя'
+    edit:
+        page_title: 'Редактировать пользователя'
+
+action:
+    search: 'Поиск'
+    new: 'Добавить'
+    edit: 'Редактировать'
+    delete: 'Удалить'
+    cancel: 'Отмена'
+    save: 'Сохранить'
+    list: 'К списку'

@@ -1,0 +1,19 @@
+default:
+  title: 'Добро пожаловать!'
+
+test:
+  username: 'Имя пользователя'
+  logout: 'Выйти'
+  login: 'Логин'
+  request_method: 'Способ запроса'
+  app_env: 'Среда приложения'
+  index_page: 'На главную'
+  security_page: 'Тестовая защищенная страница'
+  sign_in: 'Войти'
+  sign_in_text: 'Пожалуйста, введите свои данные'
+  email: 'Адрес электронной почты'
+  password: 'Пароль'
+  friendly_message: 'Это дружелюбное сообщение пришло из:'
+  welcomeincontroller: 'Привет, {controller_name}!'
+  controller_path: 'Ваш контроллер находится в файле {controller_src_path}'
+  template_path: 'Ваш шаблон находится в файле {template_src_path}'

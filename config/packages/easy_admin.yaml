@@ -1,0 +1,89 @@
+easy_admin:
+    translation_domain: 'admin'
+    site_name: 'Memobox'
+    user:
+        display_name: true
+    design:
+        assets:
+            css:
+                - 'build/admin.css'
+            js:
+                - 'build/admin.js'
+        menu:
+            - { label: 'menu.users' }
+            - { entity: 'User', icon: 'users', default: true }
+            - { label: 'menu.admins' }
+            - { entity: 'Admin', icon: 'users-cog', role: ROLE_SUPER_ADMIN }
+    entities:
+        Admin:
+            class: App\Entity\Admin
+            controller: App\Controller\Admin\Entities\AdminController
+            label: menu.admins
+            list:
+                item_permission: ['ROLE_SUPER_ADMIN']
+                label: admins.list
+                title: 'admins.list.page_title'
+                fields:
+                    - { property: 'id', label: 'admins.fields.id' }
+                    - { property: 'username', label: 'admins.fields.username' }
+                    - { property: 'email', label: 'admins.fields.email' }
+                    - { property: 'language', label: 'admins.fields.language' }
+                    - { property: 'is_active', label: 'admins.fields.is_active', type: 'boolean' }
+                    - { property: 'created_at', label: 'admins.fields.created_at' }
+                    - { property: 'updated_at', label: 'admins.fields.updated_at' }
+            new:
+                item_permission: ['ROLE_SUPER_ADMIN']
+                title: "admins.new.page_title"
+                fields:
+                    - { property: 'username', label: 'admins.fields.username' }
+                    - { property: 'plainPassword', label: 'admins.fields.password',  type: 'password' }
+                    - { property: 'email', label: 'admins.fields.email' }
+                    - { property: 'language', label: 'admins.fields.language', type_options: { required: false } }
+            edit:
+                item_permission: ['ROLE_SUPER_ADMIN']
+                title: "admins.edit.page_title"
+                fields:
+                    - { property: 'id', label: 'admins.fields.id', type_options: { disabled: true, required: false } }
+                    - { property: 'username', label: 'admins.fields.username' }
+                    - { property: 'plainPassword', label: 'users.fields.password',  type: 'password', type_options: { required: false } }
+                    - { property: 'email', label: 'admins.fields.email' }
+                    - { property: 'language', label: 'admins.fields.language', type_options: { required: false } }
+                    - { property: 'is_active', label: 'admins.fields.is_active' }
+                    - { property: 'created_at', label: 'admins.fields.created_at', type_options: { disabled: true, required: false } }
+                    - { property: 'updated_at', label: 'admins.fields.updated_at', type_options: { disabled: true, required: false } }
+        User:
+            class: App\Entity\User
+            controller: App\Controller\Admin\Entities\UserController
+            label: menu.users
+            list:
+                label: users.list
+                title: 'users.list.page_title'
+                fields:
+                    - { property: 'id', label: 'users.fields.id' }
+                    - { property: 'email', label: 'users.fields.email' }
+                    - { property: 'profile_language', label: 'users.fields.profile_language' }
+                    - { property: 'is_email_verified', label: 'users.fields.is_email_verified', type: 'boolean' }
+                    - { property: 'is_blocked_by_admin', label: 'users.fields.is_blocked_by_admin', type: 'boolean', template: 'admin/field_boolean_reverted.html.twig' }
+                    - { property: 'is_deleted_by_user', label: 'users.fields.is_deleted_by_user', type: 'boolean', template: 'admin/field_boolean_reverted.html.twig' }
+                    - { property: 'created_at', label: 'users.fields.created_at' }
+                    - { property: 'updated_at', label: 'users.fields.updated_at' }
+            new:
+                title: "users.new.page_title"
+                fields:
+                    - { property: 'email', label: 'users.fields.email' }
+                    - { property: 'plainPassword', label: 'users.fields.password',  type: 'password' }
+                    - { property: 'profile_language', label: 'users.fields.profile_language', type_options: { required: false } }
+                    - { property: 'is_email_verified', label: 'users.fields.is_email_verified' }
+                    - { property: 'is_blocked_by_admin', label: 'users.fields.is_blocked_by_admin' }
+            edit:
+                title: "users.edit.page_title"
+                fields:
+                    - { property: 'id', label: 'users.fields.id', type_options: { disabled: true, required: false } }
+                    - { property: 'email', label: 'users.fields.email' }
+                    - { property: 'plainPassword', label: 'users.fields.password',  type: 'password', type_options: { required: false } }
+                    - { property: 'profile_language', label: 'users.fields.profile_language', type_options: { required: false } }
+                    - { property: 'is_email_verified', label: 'users.fields.is_email_verified' }
+                    - { property: 'is_blocked_by_admin', label: 'users.fields.is_blocked_by_admin' }
+                    - { property: 'is_deleted_by_user', label: 'users.fields.is_deleted_by_user', type_options: { disabled: true, required: false } }
+                    - { property: 'created_at', label: 'users.fields.created_at', type_options: { disabled: true, required: false } }
+                    - { property: 'updated_at', label: 'users.fields.updated_at', type_options: { disabled: true, required: false } }

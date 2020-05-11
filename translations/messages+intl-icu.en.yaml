@@ -1,0 +1,19 @@
+default:
+  title: 'Welcome!'
+
+test:
+  username: 'Username'
+  logout: 'Logout'
+  login: 'Login'
+  request_method: 'Request method'
+  app_env: 'Application Environment'
+  index_page: 'Index Page'
+  security_page: 'Test Security Page'
+  sign_in: 'Sign in'
+  sign_in_text: 'Please sign in'
+  email: 'Email'
+  password: 'Password'
+  friendly_message: 'This friendly message is coming from:'
+  welcomeincontroller: 'Hello {controller_name}!'
+  controller_path: 'Your controller at {controller_src_path}'
+  template_path: 'Your template at {template_src_path}'
